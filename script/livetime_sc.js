@@ -1,5 +1,6 @@
-var vnev = ["Kiss","Nagy","Élő","Kovács","Tóth","Szabó","Horváth","Németh","Molnár","Farkas","Papp","Balogh","Gál"];
-var knev = ["József","Jenő","Balázs","Gábor","János","Hunor","Bálint","Balázs","Ármándó","Áron","Ádám","Péter","Dávid","Máté","Attila"];
+// var vnev = ["Kiss","Nagy","Élő","Kovács","Tóth","Szabó","Horváth","Németh","Molnár","Farkas","Papp","Balogh","Gál"];
+// var knev = ["József","Jenő","Balázs","Gábor","János","Hunor","Bálint","Balázs","Ármándó","Áron","Ádám","Péter","Dávid","Máté","Attila"];
+const nevOpen = ["Csicsman Krisztián","Szabó Balázs","Hegedűs Csaba","Szűcs Tamás","H. D","Csibi Ottó","Bertók Szabolcs","Kazai Dávid","Hofbauer András","Boda Marcell","Vojtek Viktor","Ambrus Krisztián","Alperen Ayar","Nógrádi Sánodr","Lehaci Marian","Dudás Benjamin","Puskás Zsombor","Martin Horvath","Lucas Hoferichte","Pető Bálint","Puskás András","Reinhardt Benjámin","Kapocsi Hunor","Forgács Ákos","Zsidi Bálint","Burkovics Péter","Horváth Gracián","Eisler Péter","Cosmin Andrei","Mehdi Alaoui"];
 
 var d = new Date(0,0,0,2,4,21);
 var timerr = document.getElementById("timer");
@@ -37,14 +38,27 @@ function jo(v){
 }
 
 function addem(){
+    var nevCl = nevOpen;
     var c = document.getElementById("fej");
-    var r = $('table tr').length;
 
     var d2 = new Date(0,0,0,0,4,21);
 
+    console.log(nevOpen.length);
+    //<td>${vnev[Math.floor(Math.random()*vnev.length)]} ${knev[Math.floor(Math.random()*knev.length)]}</td>
 
-    c.innerHTML += 
-    `<td>${r}</td>
-    <td>${vnev[Math.floor(Math.random()*vnev.length)]} ${knev[Math.floor(Math.random()*knev.length)]}</td>
-    `;
+    for (let i = 0; i < nevOpen.length+1; i++) {
+        var r = $('table tr').length;
+        var ra = Math.floor(Math.random()*nevCl.length);
+
+        
+
+        c.innerHTML += 
+        `<td>${r}</td>
+        <td>${nevCl[ra]}</td>
+        `;
+
+        nevCl = nevCl.splice(ra,1);
+        console.log(nevOpen.length,i,ra);
+    }
+    
 }
