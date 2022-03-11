@@ -1,9 +1,29 @@
 body{
     background-color: black;
 }
+
 h1{
     text-align: center;
 }
+
 .cim{
     margin: 20px auto;
+}
+
+.col-lg-4{
+    margin: 40px auto;
+}
+
+.divmargin{
+    margin-top: 5px;
+}
+
+.card{
+    width: 360px;
+}
+
+.card img{
+    margin: 10px auto 0 auto;
+    width: 335px;
+    height: 335px;
 }
