@@ -1,3 +1,10 @@
 .align-justify{
     text-align: justify;
 }
+#newsgray{
+    color: rgb(180, 180, 180);
+}
+.rowpad{
+    padding: 2px;
+    margin-bottom: 20px;
+}
