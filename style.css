@@ -4,6 +4,20 @@ body{
 
 h1{
     text-align: center;
+    color: white;
+}
+
+h2{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: white;
 }
 
 .cim{
@@ -26,4 +40,21 @@ h1{
     margin: 10px auto 0 auto;
     width: 335px;
     height: 335px;
+}
+
+.resize{
+    width: 540px;
+    height: 105px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.button-resize{
+    width: 100px;
+    margin: auto;
+}
+
+.background{
+    background-color: white;
+    padding-top: 25px;
 }
