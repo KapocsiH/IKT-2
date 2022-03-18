@@ -43,21 +43,86 @@ function addem(){
 
     var d2 = new Date(0,0,0,0,4,21);
 
-    console.log(nevOpen.length);
-    //<td>${vnev[Math.floor(Math.random()*vnev.length)]} ${knev[Math.floor(Math.random()*knev.length)]}</td>
+    var noHossz = nevOpen.length;
+    console.log(noHossz);
 
-    for (let i = 0; i < nevOpen.length+1; i++) {
+    var rounds = [];
+    rounds[0] = Math.floor(Math.random()*17) + 1;
+    //<td>${vnev[Math.floor(Math.random()*vnev.length)]} ${knev[Math.floor(Math.random()*knev.length)]}</td>
+    var cl = [];
+    var ll = [];
+    var bl = [];
+
+    for (let i = 0; i < noHossz; i++) {
+        if (i != 0){
+            if(Math.floor(Math.random() * 10) < 9){
+                rounds[i] = rounds[i-1];
+            }
+            else{
+                if(rounds[i-1] == 1){
+                    rounds[i] = 1;
+                }
+                else{
+                    rounds[i] = rounds[i-1] -1;
+                }
+            }
+            console.log(rounds);
+        }
         var r = $('table tr').length;
         var ra = Math.floor(Math.random()*nevCl.length);
 
+
+        //var sc = Math.floor(Math.random() * 12) + 37;
+
+        var cl1 = Math.floor(Math.random() * 12) + 37;
+        var cl2 = Math.floor(Math.random() * 881) + 100;
+        var ll1 = 0;
+        var ll2 = 0;
+        var bl1 = 0;
+        var bl2 = 0;
         
+        if(Math.floor(Math.random() * 10) < 5){
+            ll1 = cl1 + Math.floor(Math.random() * 3);
+        }
+        else{
+            ll1 = cl1 - Math.floor(Math.random() * 3);
+        }
+        ll2 = Math.floor(Math.random() * 881) + 100;
+
+        if(ll1>cl1){
+            bl1 = ll1 + Math.floor(Math.random() * 5);
+        }
+        else{
+            bl1 = cl1 + Math.floor(Math.random() * 5);
+        }
+
+        if(bl1 == ll1){
+            bl2 = ll2;
+        }
+        else if(bl1 == cl1){
+            bl2 = cl2;
+        }
+        else{
+            bl2 = Math.floor(Math.random() * 881) + 100;
+        }
+
+        cl[i] = new Date(0,0,0,0,0,cl1,cl2);
+        ll[i] = new Date(0,0,0,0,0,ll1,ll2);
+        bl[i] = new Date(0,0,0,0,0,bl1,bl2);
+
+        //gap legjobbhoz képest
+
 
         c.innerHTML += 
         `<td>${r}</td>
         <td>${nevCl[ra]}</td>
+        <td>0:${cl[i].toLocaleTimeString([],{second:"2-digit",})}.${cl[i].getMilliseconds()}</td>
+        <td>0:${ll[i].toLocaleTimeString([],{second:"2-digit",})}.${ll[i].getMilliseconds()}</td>
+        <td>0:${bl[i].toLocaleTimeString([],{second:"2-digit",})}.${bl[i].getMilliseconds()}</td>
         `;
 
-        nevCl = nevCl.splice(ra,1);
+        nevCl.splice(ra,1);
+        console.log(nevCl);
         console.log(nevOpen.length,i,ra);
     }
     
