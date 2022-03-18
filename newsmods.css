@@ -1,3 +1,11 @@
+body{
+    background-image: url(images/Screenshot_drf_audi_rs5_dtm_2019_rt_misano_4-1-122-21-59-44.jpg);
+    background-repeat: no-repeat;
+}
+.container{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
 .align-justify{
     text-align: justify;
 }
@@ -7,4 +15,7 @@
 .rowpad{
     padding: 2px;
     margin-bottom: 20px;
+}
+.newstitle{
+    color: white;
 }
