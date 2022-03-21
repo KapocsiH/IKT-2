@@ -1,5 +1,19 @@
 body{
-    background-color: black;
+    background-image: url(images/Screenshot_drf_audi_rs5_dtm_2019_rt_misano_4-1-122-21-59-44.jpg);
+    background-repeat: no-repeat;
+}
+
+@font-face{
+    font-family: 'Product Sans Black Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Product Sans Black Regular'), url('ProductSans-Black.woff') format('woff');
+}
+@font-face{
+    font-family: 'Product Sans Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Product Sans Regular'), url('ProductSans-Regular.woff') format('woff');
 }
 
 h1{
@@ -28,10 +42,6 @@ a:hover{
     margin: 40px auto;
 }
 
-.divmargin{
-    margin-top: 5px;
-}
-
 .card{
     width: 360px;
 }
@@ -43,8 +53,8 @@ a:hover{
 }
 
 .resize{
-    width: 540px;
-    height: 105px;
+    width: 360px;
+    height: 153px;
     margin-top: 25px;
     margin-bottom: 25px;
 }
@@ -57,4 +67,26 @@ a:hover{
 .background{
     background-color: white;
     padding-top: 25px;
+}
+
+.container{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.align-justify{
+    text-align: justify;
+}
+
+#newsgray{
+    color: rgb(180, 180, 180);
+}
+
+.rowpad{
+    padding: 2px;
+    margin-bottom: 20px;
+}
+
+.newstitle{
+    color: white;
 }
