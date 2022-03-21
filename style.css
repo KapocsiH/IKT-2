@@ -51,6 +51,10 @@ a:hover{
     margin: auto;
 }
 
+.button-resize2{
+    width: 125px;
+}
+
 .background{
     background-color: white;
     padding-top: 25px;
@@ -76,4 +80,17 @@ a:hover{
 
 .newstitle{
     color: white;
+}
+
+.alta{
+    color: black;
+}
+
+.alta:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+.card3{
+    width: 240px;
 }
