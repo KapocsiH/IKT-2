@@ -3,19 +3,6 @@ body{
     background-repeat: no-repeat;
 }
 
-@font-face{
-    font-family: 'Product Sans Black Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Product Sans Black Regular'), url('ProductSans-Black.woff') format('woff');
-}
-@font-face{
-    font-family: 'Product Sans Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Product Sans Regular'), url('ProductSans-Regular.woff') format('woff');
-}
-
 h1{
     text-align: center;
     color: white;
