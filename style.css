@@ -29,6 +29,12 @@ a:hover{
     margin: 40px auto;
 }
 
+iframe{
+    margin-left: 28px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
 .card{
     width: 360px;
 }
@@ -92,5 +98,6 @@ a:hover{
 }
 
 .card3{
-    width: 240px;
+    width: 360px;
+    margin-top: 80px;
 }
