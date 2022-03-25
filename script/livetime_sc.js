@@ -66,7 +66,7 @@ function addem(){
                     rounds[i] = rounds[i-1] -1;
                 }
             }
-            console.log(rounds);
+            //console.log(rounds);
         }
         var r = $('table tr').length;
         var ra = Math.floor(Math.random()*nevCl.length);
@@ -111,19 +111,116 @@ function addem(){
         bl[i] = new Date(0,0,0,0,0,bl1,bl2);
 
         //gap legjobbhoz képest
+        var blO = Number(bl[i].toLocaleTimeString([],{second:"2-digit",})+"."+bl[i].getMilliseconds());
+        var clO = Number(cl[i].toLocaleTimeString([],{second:"2-digit",})+"."+cl[i].getMilliseconds());
+        var gap = "xd";
+        if(blO>clO){
+            gap = String(Number(blO - clO).toFixed(3))+"0000";
+            gap = "0:0" + gap.substring(0,gap.indexOf(".")+4);
+            /*var gap2 = new Date(0,0,0,0,0,
+                gap.substring(0,gap.indexOf(".")),
+                gap.substring(gap.indexOf(".")+1)
+                );*/
+            //console.log(gap2);
+        }
+        else{
+            gap = "NEW BEST";
+        }
 
+        //265-285
+        var ts = 285 - Math.floor(Math.random()*35);
 
         c.innerHTML += 
         `<td>${r}</td>
-        <td>${nevCl[ra]}</td>
-        <td>0:${cl[i].toLocaleTimeString([],{second:"2-digit",})}.${cl[i].getMilliseconds()}</td>
+        <td class="fw-bold">${nevCl[ra]}</td>
+        <td>0:${cl[i].toLocaleTimeString([],{second:"2-digit",})+"."+cl[i].getMilliseconds()}</td>
         <td>0:${ll[i].toLocaleTimeString([],{second:"2-digit",})}.${ll[i].getMilliseconds()}</td>
-        <td>0:${bl[i].toLocaleTimeString([],{second:"2-digit",})}.${bl[i].getMilliseconds()}</td>
+        <td>0:${bl[i].toLocaleTimeString([],{second:"2-digit",})+"."+bl[i].getMilliseconds()}</td>
+        ${gap=="NEW BEST" ? "<td class='fw-bold newb'>"+gap+"</td>":"<td>"+gap+"</td>"}
+        <td>${ts}</td>
         `;
 
         nevCl.splice(ra,1);
-        console.log(nevCl);
-        console.log(nevOpen.length,i,ra);
+        //console.log(nevCl);
+        //console.log(nevOpen.length,i,ra);
     }
     
+}
+
+var lang = 0;
+var cd = {};
+function nyelv(){
+
+    switch (lang) {
+        case 0:
+            lang = 1;
+            break;
+        case 1:
+            lang = 2;
+            break;
+        case 2:
+            lang = 0;
+            break;
+    
+        default:
+            lang = 0;
+            break;
+    }
+
+    // if(lang == 0){
+    //     lang = 1;
+    // }
+    // else{
+    //     lang = 0;
+    // }
+    loc(lang);
+}
+
+function loadJSON(path, success, error)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                if (success)
+                    success(JSON.parse(xhr.responseText));
+            } else {
+                if (error)
+                    error(xhr);
+            }
+        }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+}
+
+function loc(hanyadik){
+    var l = ['script/en.json','script/hu.json','script/cn.json'];
+    loadJSON(l[hanyadik],
+        //function(data) { console.log(data); },
+        function(data) { cd = data; console.log(cd); re(data); },
+        function(xhr) { console.error(xhr); }
+    );
+}
+
+function re(data){
+    document.getElementById("title").textContent = data.title;
+    document.getElementById("altitle").textContent = data.where;
+    // document.getElementById("join").textContent = data.join;
+    // document.getElementById("leave").textContent = data.leave;
+    document.getElementById("nyelv").textContent = data.lang;
+
+    document.getElementById("driver").textContent = data.driver;
+    document.getElementById("cl").textContent = data.cl;
+    document.getElementById("ll").textContent = data.ll;
+    document.getElementById("bl").textContent = data.bl;
+    document.getElementById("gap").textContent = data.gap;
+    document.getElementById("ts").textContent = data.ts;
+
+    document.getElementById("l1").src = data.l1;
+
+    for (const nbi in document.getElementsByClassName("newb")) {
+        document.getElementsByClassName("newb")[nbi].textContent = data.newb;
+    }
 }

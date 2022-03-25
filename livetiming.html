@@ -45,24 +45,26 @@
       </nav>
     <div class="row">
         <div class="col-2">
-            <p class="pt-4" id="ember">31</p>
-            <img src="" alt="">
-            <button id="join" onclick="jo(true)">JOIN</button>
-            <button id="join" onclick="jo(false)">LEAVE</button>
-            <button id="join" onclick="addem()">add</button>
+            <!-- <p class="pt-4" id="ember">31</p> -->
+            <!-- <img src="" alt=""> -->
+            <!-- <button id="join" onclick="jo(true)">Join</button> -->
+            <!-- <button id="leave" onclick="jo(false)">Leave</button> -->
+            <button onclick="nyelv()">
+              <img id="l1" src="images/z1.png" alt="" height="25">
+              <span id="nyelv">Language</span></button>
         </div>
         <div class="col-8 text-center">
-            <h1>Practice at Silverstone GP</h1>
-            <h4>Silverstone, Great Britain</h4>
+            <h1 id="title">Practice at Silverstone GP</h1>
+            <h4 id="altitle">Silverstone, Great Britain</h4>
             <p id="timer">0:00:00</p>
         </div>
         <div class="col-2 text-end">
             <div>
-                <img src="script/temp-road.png" alt="35°C" title="35°C" class="w-25 pt-4">
+                <img src="images/temp-road.png" alt="35°C" title="35°C" class="w-25 pt-4">
                 <p>35°C</p>
             </div>
             <div>
-                <img src="script/temp-ambient.png" alt="25°C" title="25°C" class="w-25">
+                <img src="images/temp-ambient.png" alt="25°C" title="25°C" class="w-25">
                 <p>25°C</p>
             </div>
         </div>
@@ -72,12 +74,12 @@
         <table class="table table-striped" id="fej">
             <tr>
                 <th>#</th>
-                <th>Driver</th>
-                <th>Current Lap</th>
-                <th>Last Lap</th>
-                <th>Best Lap</th>
-                <th>Gap</th>
-                <th>Top Speed</th>
+                <th id="driver">Driver</th>
+                <th id="cl">Current Lap</th>
+                <th id="ll">Last Lap</th>
+                <th id="bl">Best Lap</th>
+                <th id="gap">Gap</th>
+                <th id="ts">Top Speed</th>
             </tr>
         </table>
     </div>
@@ -85,7 +87,7 @@
 
 
     <script src="script/jquery-3.6.0.min.js"></script>
-    <script src="script/livetime_sc.js"></script>
+    <script src="script/livetime_sc.js" onload="addem(); loc(0);"></script>
 </body>
 
 </html>

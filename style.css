@@ -1,6 +1,7 @@
 body{
     background-image: url(images/Screenshot_drf_audi_rs5_dtm_2019_rt_misano_4-1-122-21-59-44.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1{
@@ -37,6 +38,7 @@ iframe{
 
 .card{
     width: 360px;
+    text-align: center;
 }
 
 .card img{
@@ -62,7 +64,6 @@ iframe{
 }
 
 .background{
-    background-color: white;
     padding-top: 25px;
 }
 
@@ -82,6 +83,7 @@ iframe{
 .rowpad{
     padding: 2px;
     margin-bottom: 20px;
+    height: 430px;
 }
 
 .newstitle{
@@ -100,4 +102,15 @@ iframe{
 .card3{
     width: 360px;
     margin-top: 80px;
+    width: 240px;
+}
+.newsborder:hover{
+    border: 3px solid red;
+    cursor: grab;
+}
+.card2{
+    max-height: 200px !important;
+}
+.newsimg{
+    border: 2px solid white;
 }
