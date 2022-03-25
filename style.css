@@ -30,6 +30,12 @@ a:hover{
     margin: 40px auto;
 }
 
+iframe{
+    margin-left: 28px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
 .card{
     width: 360px;
     text-align: center;
@@ -77,6 +83,7 @@ a:hover{
 .rowpad{
     padding: 2px;
     margin-bottom: 20px;
+    height: 430px;
 }
 
 .newstitle{
@@ -93,6 +100,8 @@ a:hover{
 }
 
 .card3{
+    width: 360px;
+    margin-top: 80px;
     width: 240px;
 }
 .newsborder:hover{
