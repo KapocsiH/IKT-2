@@ -107,6 +107,7 @@ iframe{
 .newsborder:hover{
     border: 3px solid red;
     cursor: grab;
+    transition: 100ms;
 }
 .card2{
     max-height: 200px !important;
