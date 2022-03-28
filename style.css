@@ -43,14 +43,15 @@ iframe{
     width: 360px;
     text-align: center;
     background: linear-gradient(to left, #fff 50%, red 50%);
-    background-size: 250%;
+    background-size: 200%;
     background-position: right;
+    border: 3px solid red;
+    border-radius: 10px;
     transition: all 0.5s ease-out;
 }
 
 .card:hover{
     background-position: left;
-    border: 1px solid red;
 }
 
 .card img{
@@ -116,6 +117,11 @@ iframe{
     margin-top: 80px;
     width: 240px;
 }
+.newsborder:hover{
+    border: 3px solid red;
+    cursor: grab;
+    transition: 0,5s;
+}
 .card2{
     max-height: 200px !important;
 }
@@ -143,4 +149,14 @@ iframe{
 #fej{
     background-color: rgba(19, 18, 36, 0.5);
     color: white;
+}
+.moda{
+    background: linear-gradient(to left, #000 50%, red 50%);
+    background-size: 250%;
+    background-position: right;
+    transition: all 0.5s ease-out;
+}
+.moda:hover{
+    background-position: left;
+    border: 1px solid red;
 }
