@@ -20,7 +20,8 @@ function tm(){
 }
 setInterval( () =>{
     d.setMilliseconds(-1);
-    timerr.innerText = d.toLocaleTimeString([],{hour: "2-digit", minute: "2-digit", second:"2-digit"});
+    dStr = d.toLocaleTimeString([],{hour: "2-digit", minute: "2-digit", second:"2-digit"});
+    timerr.innerText = dStr.substring(0,dStr.search(" "));
 },1000);
 
 
