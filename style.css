@@ -115,3 +115,7 @@ iframe{
 .newsimg{
     border: 2px solid white;
 }
+
+.carousel-item img{
+    height: 240px;
+}
