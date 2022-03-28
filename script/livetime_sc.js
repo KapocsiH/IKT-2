@@ -116,7 +116,7 @@ function addem(){
         var gap = "xd";
         if(blO>clO){
             gap = String(Number(blO - clO).toFixed(3))+"0000";
-            gap = "0:0" + gap.substring(0,gap.indexOf(".")+4);
+            gap = "00:0" + gap.substring(0,gap.indexOf(".")+4);
             /*var gap2 = new Date(0,0,0,0,0,
                 gap.substring(0,gap.indexOf(".")),
                 gap.substring(gap.indexOf(".")+1)
@@ -133,9 +133,9 @@ function addem(){
         c.innerHTML += 
         `<td>${r}</td>
         <td class="fw-bold">${nevCl[ra]}</td>
-        <td>0:${cl[i].toLocaleTimeString([],{second:"2-digit",})+"."+cl[i].getMilliseconds()}</td>
-        <td>0:${ll[i].toLocaleTimeString([],{second:"2-digit",})}.${ll[i].getMilliseconds()}</td>
-        <td>0:${bl[i].toLocaleTimeString([],{second:"2-digit",})+"."+bl[i].getMilliseconds()}</td>
+        <td>01:${cl[i].toLocaleTimeString([],{second:"2-digit",})+"."+cl[i].getMilliseconds()}</td>
+        <td>01:${ll[i].toLocaleTimeString([],{second:"2-digit",})}.${ll[i].getMilliseconds()}</td>
+        <td>01:${bl[i].toLocaleTimeString([],{second:"2-digit",})+"."+bl[i].getMilliseconds()}</td>
         ${gap=="NEW BEST" ? "<td class='fw-bold newb'>"+gap+"</td>":"<td>"+gap+"</td>"}
         <td>${ts}</td>
         `;
@@ -148,22 +148,27 @@ function addem(){
 }
 
 var lang = 0;
+var langName = "EN";
 var cd = {};
 function nyelv(){
 
     switch (lang) {
         case 0:
             lang = 1;
+            langName = "HU";
             break;
         case 1:
             lang = 2;
+            langName = "CN";
             break;
         case 2:
             lang = 0;
+            langName = "EN";
             break;
     
         default:
             lang = 0;
+            langName = "EN";
             break;
     }
 
@@ -223,4 +228,75 @@ function re(data){
     for (const nbi in document.getElementsByClassName("newb")) {
         document.getElementsByClassName("newb")[nbi].textContent = data.newb;
     }
+
+    /*for (const dl in document.getElementsByClassName("tomorrow")) {
+        var o = document.getElementsByClassName("tomorrow")[dl];
+        var p = o.parentElement;
+        p.removeChild(o);
+        p.innerHTML += `<div class="tomorrow"
+        data-location-id="051311"
+        data-language="EN"
+        data-unit-system="METRIC"
+        data-skin="dark"
+        data-widget-type="upcoming">
+       <a href="https://www.tomorrow.io/weather/"
+         rel="nofollow noopener noreferrer"
+         target="_blank">
+       </a>
+     </div>`;
+        
+        //document.getElementsByClassName("tomorrow")[dl].setAttribute("data-language",langName);
+        //document.getElementsByClassName("tomorrow")[dl].setAttribute("data-rendered",false);
+        
+    }*/
+
+    var p = document.getElementById("parent");
+    var o = p.firstElementChild;
+
+    console.log(o);
+
+    p.removeChild(o);
+
+    p.innerHTML += `<div class="tomorrow"
+         data-location-id="051311"
+         data-language=${langName}
+         data-unit-system="METRIC"
+         data-skin="dark"
+         data-widget-type="upcoming">
+        <a href="https://www.tomorrow.io/weather/"
+          rel="nofollow noopener noreferrer"
+          target="_blank">
+        </a>
+      </div>`
+    ;
+
+    // for (const oo in document.getElementsByClassName("tomorrow")) {
+    //     o = document.getElementsByClassName("tomorrow")[oo];
+    //     p.innerHTML += `<div class="tomorrow"
+    //     data-location-id="051311"
+    //     data-language="EN"
+    //     data-unit-system="METRIC"
+    //     data-skin="dark"
+    //     data-widget-type="upcoming">
+    //    <a href="https://www.tomorrow.io/weather/"
+    //      rel="nofollow noopener noreferrer"
+    //      target="_blank">
+    //    </a>
+    //  </div>`;
+    // }
+
+    (function(d, s, id) {
+        if (d.getElementById(id)) {
+            if (window.__TOMORROW__) {
+                window.__TOMORROW__.renderWidget();
+            }
+            return;
+        }
+        const fjs = d.getElementsByTagName(s)[0];
+        const js = d.createElement(s);
+        js.id = id;
+        js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+        fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'tomorrow-sdk');
 }

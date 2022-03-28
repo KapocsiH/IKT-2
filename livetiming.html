@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Tomee-Esports Live Timing</title>
 </head>
 
@@ -39,50 +40,96 @@
                 <a class="nav-link" href="contacts.html">Elérhetőség</a>
               </li>
           </div>
-      </nav>
-    <div class="row">
-        <div class="col-2">
-            <!-- <p class="pt-4" id="ember">31</p> -->
-            <!-- <img src="" alt=""> -->
-            <!-- <button id="join" onclick="jo(true)">Join</button> -->
-            <!-- <button id="leave" onclick="jo(false)">Leave</button> -->
-            <button onclick="nyelv()">
-              <img id="l1" src="images/z1.png" alt="" height="25">
-              <span id="nyelv">Language</span></button>
-        </div>
-        <div class="col-8 text-center">
-            <h1 id="title">Practice at Silverstone GP</h1>
-            <h4 id="altitle">Silverstone, Great Britain</h4>
-            <p id="timer">0:00:00</p>
-        </div>
-        <div class="col-2 text-end">
-            <div>
-                <img src="images/temp-road.png" alt="35°C" title="35°C" class="w-25 pt-4">
-                <p>35°C</p>
+    </nav>
+    <div class="row mx-auto">
+      <div class="col-2 mt-4">
+        <button onclick="nyelv()">
+          <img id="l1" src="images/z1.png" alt="" height="25">
+          <span id="nyelv">Language</span>
+        </button>
+        <!-- <a class="weatherwidget-io" href="https://forecast7.com/en/52d09n1d03/silverstone/" data-label_1="SILVERSTONE" data-label_2="WEATHER" data-theme="original" >SILVERSTONE WEATHER</a>
+          <script>
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+          </script> -->
+          <!-- 
+            <script>
+              (function(d, s, id) {
+                  if (d.getElementById(id)) {
+                      if (window.__TOMORROW__) {
+                          window.__TOMORROW__.renderWidget();
+                      }
+                      return;
+                  }
+                  const fjs = d.getElementsByTagName(s)[0];
+                  const js = d.createElement(s);
+                  js.id = id;
+                  js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+      
+                  fjs.parentNode.insertBefore(js, fjs);
+              })(document, 'script', 'tomorrow-sdk');
+              </script>
+           -->
+        <div id="parent">
+            <div class="tomorrow"
+               data-location-id="051311"
+               data-language="EN"
+               data-unit-system="METRIC"
+               data-skin="dark"
+               data-widget-type="upcoming">
+              <a href="https://www.tomorrow.io/weather/"
+                rel="nofollow noopener noreferrer"
+                target="_blank">
+              </a>
             </div>
-            <div>
-                <img src="images/temp-ambient.png" alt="25°C" title="25°C" class="w-25">
-                <p>25°C</p>
-            </div>
         </div>
-
+        
+      </div>
+      <div class="mt-4 mx-auto col-10">
+        <div class="container pb-1">
+          <div class="row text-center">
+            <div class="col-2">
+                <!-- <p class="pt-4" id="ember">31</p> -->
+                <!-- <img src="" alt=""> -->
+                <!-- <button id="join" onclick="jo(true)">Join</button> -->
+                <!-- <button id="leave" onclick="jo(false)">Leave</button> -->
+            </div>
+            <div class="col-8">
+                <h1 id="title" class="newstitle">Practice at Silverstone GP</h1>
+                <h4 id="altitle" class="newstitle">Silverstone, Great Britain</h4>
+                <p id="timer" class="newstitle">0:00:00</p>
+            </div>
+            <!-- <div class="offset-4 col-2 text-end">
+                <div>
+                    <img src="images/temp-road.png" alt="35°C" title="35°C" class="w-25 pt-4">
+                    <p>35°C</p>
+                </div>
+                <div>
+                    <img src="images/temp-ambient.png" alt="25°C" title="25°C" class="w-25">
+                    <p>25°C</p>
+                </div>
+            </div> -->
+    
+          </div>
+          <div id="lap">
+              <table class="table" id="fej">
+                <!-- table-striped table-hover -->
+                  <tr>
+                      <th>#</th>
+                      <th id="driver">Driver</th>
+                      <th id="cl">Current Lap</th>
+                      <th id="ll">Last Lap</th>
+                      <th id="bl">Best Lap</th>
+                      <th id="gap">Gap</th>
+                      <th id="ts">Top Speed</th>
+                  </tr>
+              </table>
+          </div>
+    
+        </div>
+      </div>
     </div>
-    <div id="lap">
-        <table class="table table-striped" id="fej">
-            <tr>
-                <th>#</th>
-                <th id="driver">Driver</th>
-                <th id="cl">Current Lap</th>
-                <th id="ll">Last Lap</th>
-                <th id="bl">Best Lap</th>
-                <th id="gap">Gap</th>
-                <th id="ts">Top Speed</th>
-            </tr>
-        </table>
-    </div>
-
-
-
+        
+    
     <script src="script/jquery-3.6.0.min.js"></script>
     <script src="script/livetime_sc.js" onload="addem(); loc(0);"></script>
 </body>

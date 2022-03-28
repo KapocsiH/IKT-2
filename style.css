@@ -2,6 +2,9 @@ body{
     background-image: url(images/Screenshot_drf_audi_rs5_dtm_2019_rt_misano_4-1-122-21-59-44.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 h1{
@@ -131,4 +134,13 @@ iframe{
 }
 .mod{
     border: 2px solid red;
+}
+
+iframe{
+    margin-left: 0;
+}
+
+#fej{
+    background-color: rgba(19, 18, 36, 0.5);
+    color: white;
 }
