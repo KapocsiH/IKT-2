@@ -122,4 +122,13 @@ iframe{
 
 .carousel-item img{
     height: 240px;
+} 
+.textbig{
+    font-size: 3rem;
+}
+.modimg{
+    max-width: 250px;
+}
+.mod{
+    border: 2px solid red;
 }
