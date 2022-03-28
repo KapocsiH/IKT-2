@@ -113,6 +113,11 @@ iframe{
     margin-top: 80px;
     width: 240px;
 }
+.newsborder:hover{
+    border: 3px solid red;
+    cursor: grab;
+    transition: 100ms;
+}
 .card2{
     max-height: 200px !important;
 }
