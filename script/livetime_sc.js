@@ -215,7 +215,6 @@ function re(data){
     document.getElementById("altitle").textContent = data.where;
     // document.getElementById("join").textContent = data.join;
     // document.getElementById("leave").textContent = data.leave;
-    // document.getElementById("nyelv").textContent = data.lang;
 
     document.getElementById("driver").textContent = data.driver;
     document.getElementById("cl").textContent = data.cl;
